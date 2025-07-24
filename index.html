@@ -68,7 +68,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#training-sessions">Training</a></li>
-          <li><a href="#book-session">Booking</a></li>
+          <li><a href="#appointment">Appointment</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -526,11 +526,6 @@ across Tanzania.</p>
 </section>
 <!-- /Testimonials Section -->
 
-
-
-
-
-   
     <!-- Pricing Section -->
 <section id="clients" class="clients section">
 
@@ -675,11 +670,11 @@ across Tanzania.</p>
           <div class="icon">
             <i class="bi bi-briefcase"></i>
           </div>
-          <a href="#book-session" class="stretched-link">
+          <a href="#appointment" class="stretched-link">
             <h3>Business Consultancy</h3>
           </a>
           <p>Get expert guidance on business planning, growth strategies, and operational improvements tailored to your organization’s needs.</p>
-          <a href="#book-session" class="btn btn-primary mt-3">Book Now</a>
+          <a href="#appointment" class="btn btn-primary mt-3">Book Now</a>
         </div>
       </div>
 
@@ -689,11 +684,11 @@ across Tanzania.</p>
           <div class="icon">
             <i class="bi bi-lightning-charge"></i>
           </div>
-          <a href="#book-session" class="stretched-link">
+          <a href="#appointment" class="stretched-link">
             <h3>Digital Transformation</h3>
           </a>
           <p>Learn how to modernize your operations using digital tools, automation, and strategic IT adoption to boost efficiency.</p>
-          <a href="#book-session" class="btn btn-primary mt-3">Book Now</a>
+          <a href="#appointment" class="btn btn-primary mt-3">Book Now</a>
         </div>
       </div>
 
@@ -703,11 +698,11 @@ across Tanzania.</p>
           <div class="icon">
             <i class="bi bi-mortarboard"></i>
           </div>
-          <a href="#book-session" class="stretched-link">
+          <a href="#appointment" class="stretched-link">
             <h3>Training & Capacity Building</h3>
           </a>
           <p>Enhance your team’s skills through tailored training programs designed to build capacity and drive sustainable growth.</p>
-          <a href="#book-session" class="btn btn-primary mt-3">Book Now</a>
+          <a href="#appointment" class="btn btn-primary mt-3">Book Now</a>
         </div>
       </div>
 
@@ -718,19 +713,20 @@ across Tanzania.</p>
 
 
 <!-- Booking Section -->
-<section id="book-session" class="services section">
+<section id="appointment" class="services section">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Book a Training Session</h2>
-    <div><span>Schedule Your</span> <span class="description-title">Booking</span></div>
-    <p>Select a convenient time slot for your training session using the scheduler below.</p>
+<h2>Book an Appointment</h2> 
+<div><span>Schedule Your</span> <span class="description-title">Appointment</span></div>
+<p>Select a convenient time slot for your appointment using the scheduler below.</p>
+
   </div><!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     <div style="min-width: 320px; height: 700px;">
       <div class="calendly-inline-widget" 
-           data-url="https://calendly.com/ebsmartsolutions/30min" 
+           data-url="https://calendly.com/magilazmediatz/one-on-one-consultancy" 
            style="min-width: 320px; height: 700px;">
       </div>
     </div>
@@ -818,7 +814,7 @@ DAR ES SALAAM</p>
     <div class="col-md-12">
       <textarea name="message" class="form-control" rows="4" placeholder="Message" required></textarea>
     </div>
-    <input type="hidden" name="reply_to" value="info@ebdigitaltech.co.tz">
+    <input type="hidden" name="reply_to" id="reply_to">
 
 
     <div class="col-md-12 text-center">
@@ -872,7 +868,7 @@ DAR ES SALAAM</p>
           <li><a href="#services" style="color: white;">Services</a></li>
           <li><a href="#portfolio" style="color: white;">Portfolio</a></li>
           <li><a href="#training-sessions" style="color: white;">Training</a></li>
-          <li><a href="#book-session" style="color: white;">Booking</a></li>
+          <li><a href="#appointment" style="color: white;">Booking</a></li>
           <li><a href="#contact" style="color: white;">Contact</a></li>
         </ul>
       </div>
@@ -927,17 +923,20 @@ transformation, and capacity building.</p>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS
-    emailjs.init("zlR6c3Z3_xpU-eFig"); // Replace with your actual Public Key
+    emailjs.init("1qiOJme5mmVgPYoU3"); // Replace with your actual Public Key
 
     // Handle form submission
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
 
+        // Dynamically assign the user's email as reply_to
+  document.getElementById('reply_to').value = this.email.value;
+
       document.querySelector('.loading').style.display = 'block';
       document.querySelector('.sent-message').style.display = 'none';
       document.querySelector('.error-message').style.display = 'none';
 
-      emailjs.sendForm('service_b9iyv4k', 'template_sl00xpo', this)
+      emailjs.sendForm('service_3k9j8j5', 'template_hhxafmy', this)
         .then(function() {
           document.querySelector('.loading').style.display = 'none';
           document.querySelector('.sent-message').style.display = 'block';
